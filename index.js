@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 
 
@@ -22,9 +22,13 @@ const allowCors = fn => async (req, res) => {
   return await fn(req, res)
 }
 
-;
+app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/public'));
+app.get('/', function(req, res) {
+  res.render('pages/index');
+});
+
+//app.use(express.static(__dirname + '/public'));
 
 app.get('/api/home', (req, res) => {
   res.status(200).json('Welcome to Home page API route'+  process.env.VERCEL_URL);
@@ -35,4 +39,4 @@ app.listen(PORT, () => {
 });
 
 // Export the Express API
-module.exports = allowCors(app)
+module.exports = app
