@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
   var baseURL = "https://"+ process.env.VERCEL_URL +"/api/home";
-  res.render('pages/home', { baseURL : baseURL});
+  res.render('pages/home');
 });
 
 //app.use(express.static(__dirname + '/public'));
