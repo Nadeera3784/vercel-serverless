@@ -1,13 +1,11 @@
 const express = require('express')
 const app = express()
-const PORT = 4000
+const PORT = process.env.PORT || 4000;
 
 
-app.get('/', (req, res) => {
-  res.send('Default API route')
-})
+app.use(express.static(__dirname + '/public'));
 
-app.get('/home', (req, res) => {
+app.get('/api/home', (req, res) => {
   res.status(200).json('Welcome to Home page API route');
 })
 
