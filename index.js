@@ -25,7 +25,7 @@ const allowCors = fn => async (req, res) => {
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('pages/index');
+  res.render('pages/home');
 });
 
 //app.use(express.static(__dirname + '/public'));
