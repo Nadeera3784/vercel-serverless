@@ -14,7 +14,7 @@
       <h1>Hello World</h1>
       <script>
         $(document ).ready(function() {
-            var url = "https://vercel-serverless-hxgxhz1kv-nadeera3784.vercel.app/api/home";
+          var url = '<%= baseURL %>'; 
             $.ajax({
                 type: 'GET',
                 url: url,

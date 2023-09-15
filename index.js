@@ -25,7 +25,8 @@ const allowCors = fn => async (req, res) => {
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('pages/home');
+  var baseURL = "https://"+process.env.VERCEL_URL+"/api/home"
+  res.render('pages/home', { baseURL : baseURL});
 });
 
 //app.use(express.static(__dirname + '/public'));
