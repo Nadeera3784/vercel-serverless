@@ -27,7 +27,7 @@ const allowCors = fn => async (req, res) => {
 app.use(express.static(__dirname + '/public'));
 
 app.get('/api/home', (req, res) => {
-  res.status(200).json('Welcome to Home page API route');
+  res.status(200).json('Welcome to Home page API route'+  process.env.VERCEL_URL);
 })
 
 app.listen(PORT, () => {
